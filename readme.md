@@ -6,6 +6,6 @@ Steps to derieve 2d data from the original 3d dataset:
 2 - Set the directory of the extracted folder in the prepare_dataset.py file and run it.
 3 - Run split_data.py to get 80/20 or 70/15/15 split , whichever you want.
 4 - Run the Unet.ipynb file.
-
+Note: Before running the scripts, make sure to update the dataset_root path in prepare_dataset.py and the SOURCE_DIR in split_data.py to match your local machine
 To train the model, open Unet.ipynb file and run each block seperatly.
 Keep all the files in the same root directory.
