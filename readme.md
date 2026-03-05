@@ -72,7 +72,7 @@ https://drive.google.com/file/d/1YZQFSonulXuagMIfbJkZeTFJ6qEUuUxL/view?usp=drive
 | Initial LR | 1e-4 | Not explicitly reported (SGD used) | Adam default variants reported; not exact LR in general | Empirical modern choice |
 | Optimizer | AdamW (weight_decay=1e-5) | SGD with momentum 0.99 | Adam | AdamW improves generalization + weight decay regularization |
 | LR Scheduler | Cosine Annealing (min_lr=1e-6) | None / not specified in base paper | Not mandated (varies) | Practical modern training design |
-| Loss Function | Combo Loss = 0.5 × CE + 0.5 × Dice | Pixel-wise softmax + Cross-Entropy with weight maps (emphasize borders) | Sørensen–Dice / Dice-based losses used | Combo helps overlap metrics and boundary performance |
+| Loss Function | Combo Loss = 0.5 × CE + 0.5 × Dice | Pixel-wise softmax + Cross-Entropy with weight maps (emphasize borders) | Sorensen–Dice / Dice-based losses used | Combo helps overlap metrics and boundary performance |
 | Input Image / Patch | 512 × 512 (2D slices) | 572 × 572 tiles (2D input; output crops due to valid convolutions) | Volumetric patches (3D inputs) | We use 2D slices to reduce memory and reuse a 2D pipeline |
 | CT Intensity Clipping | [-100, 240] HU (soft tissue window) | N/A (original U-Net used microscopy imagery) | Varies by CT experiments; normalization used | Domain-specific preprocessing for CT |
 | Train / Val / Test Split | 80% / 20% (Random State: 42) or 70/15/15 | Varies by dataset / experiment | Varies by dataset / experiment | — |
